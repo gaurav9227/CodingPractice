@@ -51,7 +51,7 @@ public class MainClass {
 		Node result = bt.lca(bt.root, bt.lookup(bt.root,25), bt.lookup(bt.root,40));
 		System.out.println("LCA is: "+result.data);
 		int minDepth = bt.minDepth(bt2.root);			
-		System.out.println("minDepth2: "+minDepth);
+		System.out.println("minDepth3: "+minDepth);
 		
 	}
 }
