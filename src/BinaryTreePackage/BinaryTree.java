@@ -68,9 +68,13 @@ public class BinaryTree {
 	public int minDepth(Node root1) {
 		if(root1 == null)
 			return 0;
+		if(root1.left == null && root1.right == null)
+			return 1;
 		
-		else
+		if(root1.left != null && root1.right != null)
 			return 1 + Integer.min(minDepth(root1.left),minDepth(root1.right));
+		else
+			return 1 + Integer.max(minDepth(root1.left), minDepth(root1.right));
 	}
 	
 	public int minValue(Node root1) {
@@ -213,5 +217,24 @@ public class BinaryTree {
 		
 		return lres!=null?lres:rres;
 		
+	}
+	
+	public void levelOrderRecursive(Node root1) {
+		int height = maxDepth(root1);
+		
+		for(int i=1;i<=height;i++) {
+			levelPrint(root1,i);
+			System.out.println();
+		}
+	}
+	public void levelPrint(Node root1,int level) {
+		if(root1 == null)
+			return;
+		if(level==1)
+			System.out.print(root1.data+"--");
+		else {
+			levelPrint(root1.left,level-1);
+			levelPrint(root1.right,level-1);
+		}
 	}
 }

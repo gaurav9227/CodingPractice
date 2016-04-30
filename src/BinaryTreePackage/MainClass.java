@@ -45,13 +45,15 @@ public class MainClass {
 		BinaryTree bt2 = new BinaryTree();
 		bt2.root=bt2.insert(bt2.root, 20);
 		bt2.root=bt2.insert(bt2.root, 10);
+		bt2.root=bt2.insert(bt2.root, 15);
+		bt2.root=bt2.insert(bt2.root, 13);
 		bt2.root=bt2.insert(bt2.root, 25);
 		bt2.root=bt2.insert(bt2.root, 30);
 		bt2.root=bt2.insert(bt2.root, 40);
 		Node result = bt.lca(bt.root, bt.lookup(bt.root,25), bt.lookup(bt.root,40));
 		System.out.println("LCA is: "+result.data);
-		int minDepth = bt.minDepth(bt2.root);			
+		int minDepth = bt2.minDepth(bt2.root);			
 		System.out.println("minDepth4: "+minDepth);
-		
+		bt2.levelOrderRecursive(bt2.root);
 	}
 }
